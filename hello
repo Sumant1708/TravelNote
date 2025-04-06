@@ -1,0 +1,11 @@
+<header class="header">
+      <div class="left-header">
+        <button class="home-button">Home</button>
+      </div>
+      <div class="middle-header">
+        RouteNote
+      </div>
+      <div class="right-header">
+        <button class="login-button">Login</button>
+      </div>
+    </header>

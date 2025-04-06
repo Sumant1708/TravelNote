@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel-Map JOURNAL</title>
+    <style>
+      body {
+        padding: 40px;
+        background: linear-gradient(120deg, #c9d6ff, #e2e2e2);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        transition: background 0.5s ease-in-out;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 50px;
+        animation: fadeInDown 1s ease;
+      }
+
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .info-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #ffffffcc;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .info-container:hover {
+        transform: scale(1.02);
+      }
+
+      .info-item {
+        font-size: 1.2rem;
+        margin: 15px 0;
+        color: #333;
+      }
+
+      .info-item span {
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: #222;
+      }
+
+      #logout {
+        display: block;
+        margin: 30px auto 0 auto;
+        color: white;
+        background-color: #6a5acd;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s;
+      }
+
+      #logout:hover {
+        background-color: #483d8b;
+        transform: translateY(-2px);
+      }
+    </style>
+    <script type="module" src="./homepage.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to the Journal</h1>
+    <div class="info-container">
+      <div class="info-item">
+        First Name: <span id="loggedUserFName"></span>
+      </div>
+      <div class="info-item">Last Name: <span id="loggedUserLName"></span></div>
+      <div class="info-item">Email: <span id="loggedUserEmail"></span></div>
+      <button id="logout">Logout</button>
+    </div>
+  </body>
+</html>

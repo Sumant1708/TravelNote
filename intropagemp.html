@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        /* Background Video */
+        #video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        #header h4 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        #lg button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        #lg button:hover {
+            background: white;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            #header h1 {
+                font-size: 2rem;
+            }
+
+            #header h4 {
+                font-size: 1rem;
+            }
+
+            #lg button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+        footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.footer-blur {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    text-align: center;
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-blur .socials {
+    margin-bottom: 10px;
+}
+
+.footer-blur .socials a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-blur .socials img {
+    width: 28px;
+    height: 28px;
+    filter: invert(1);
+}
+
+.footer-blur .socials a:hover {
+    transform: scale(1.2);
+}
+
+.footer-blur .thanks {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #ddd;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Script for fade-in on load and fade-out on click -->
+    <script>
+        // Fade in when page loads
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+
+        // Fade out and go to next page
+        const btn = document.getElementById("startBtn");
+
+        btn.addEventListener("click", () => {
+            document.body.classList.remove("loaded");
+            document.body.classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 800); // match CSS transition duration
+        });
+    </script>
+    
+
+    <video id="video-bg" autoplay loop muted>
+        <source src="drone shot.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <section id="header">
+        <h1>Capture Your Journeys, One Pin At A Time</h1>
+        <h4>Map Your Travels, Upload Photos, and Relive Memories</h4>
+    </section>
+
+    <section id="lg">
+        <button type="button" id="startBtn">Start Your Journal Now!</button>
+    </section>
+
+    <footer>
+        <div class="footer-blur">
+            <div class="socials">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                </a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+                </a>
+            </div>
+            <p class="thanks">Thank you for using our website. We hope your journey is unforgettable!</p>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
